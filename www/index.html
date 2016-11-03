@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
+<title>Peptify</title>
+<script src="shared/jquery.js" type="text/javascript"></script>
+<script src="shared/shiny.js" type="text/javascript"></script>
+<!-- Bootstrap Core CSS -->
+<link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Menu CSS -->
+<!-- toast CSS -->
+<link href="plugins/bower_components/toast-master/css/jquery.toast.css" rel="stylesheet">
+<!-- morris CSS -->
+<link href="css/animate.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="css/style.css" rel="stylesheet">
+<!-- color CSS -->
+<link href="css/colors/default.css" id="theme"  rel="stylesheet">
+
+<link href="plugins/toggle/toggle.css" rel="stylesheet">
+
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+<script src="shared/babel-polyfill.min.js"></script>
+<script src="shared/shiny.min.js"></script>
+<link href="shared/ionrangeslider/css/ion.rangeSlider.css" rel="stylesheet" />
+<link href="shared/ionrangeslider/css/ion.rangeSlider.skinShiny.css" rel="stylesheet" />
+<script src="shared/ionrangeslider/js/ion.rangeSlider.min.js"></script>
+<script src="shared/strftime/strftime-min.js"></script>
+<link href="shared/selectize/css/selectize.bootstrap3.css" rel="stylesheet" />
+<!--[if lt IE 9]>
+<script src="shared/selectize/js/es5-shim.min.js"></script>
+<![endif]-->
+<script src="shared/selectize/js/selectize.min.js"></script>
+<link href="shared/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<script src="shared/datatables/js/jquery.dataTables.min.js"></script>
+<link href="shared/datatables/css/dataTables.bootstrap.css" rel="stylesheet" />
+<link href="shared/datatables/css/dataTables.extra.css" rel="stylesheet" />
+<script src="shared/datatables/js/dataTables.bootstrap.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="shared/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script src="shared/bootstrap/js/bootstrap.min.js"></script>
+<script src="shared/bootstrap/shim/html5shiv.min.js"></script>
+<script src="shared/bootstrap/shim/respond.min.js"></script>  <title>Census Explorer - by Ari Lamstein</title>
+
+<!-- <link href="shared/selectize/css/selectize.bootstrap3.css" rel="stylesheet" /> -->
+<!--[if lt IE 9]>
+<script src="shared/selectize/js/es5-shim.min.js"></script>
+<![endif]-->
+<style>
+  html {
+      background-color: #90A4AE;
+  }
+
+   html {
+      max-width: 1200px; 
+      display: block;
+      margin-left: auto;
+      margin-right: auto
+  }
+</style>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+<!-- Preloader -->
+<div class="preloader">
+  <div class="cssload-speeding-wheel"></div>
+</div>
+<div id="wrapper">
+  <!-- Top Navigation -->
+  <!-- End Top Navigation -->
+  <!-- Left navbar-header end -->
+  <!-- Page Content -->
+  <div id="page-wrapper">
+    <div class="container-fluid">
+        <!-- /.col-lg-12 -->
+      </div>
+      <!-- /.row -->
+        <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="white-box">
+                   
+          <form >
+          <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group shiny-input-container">
+            <label class="control-label" for="num_colors">Number of colors:</label>
+            <input class="js-range-slider" id="num_colors" data-min="1" data-max="9" data-from="7" data-step="1" data-grid="true" data-grid-num="8" data-grid-snap="false" data-keyboard="true" data-keyboard-step="12.5" data-drag-interval="true" data-data-type="number" data-prettify-separator=","/>
+          </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12 ">
+          <div class="form-group shiny-input-container">
+          <br>
+            <label class="control-label" for="select">Select demographic:</label>
+            <div>
+              <select id="select"><option value="total_population">total_population</option>
+              <option value="percent_white">percent_white</option>
+              <option value="percent_black">percent_black</option>
+              <option value="percent_asian">percent_asian</option>
+              <option value="percent_hispanic">percent_hispanic</option>
+              <option value="per_capita_income">per_capita_income</option>
+              <option value="median_rent">median_rent</option>
+              <option value="median_age">median_age</option></select>
+              <script type="application/json" data-for="select" data-nonempty="">{}</script>
+            </div>
+          </div>
+          </div>
+          <br>
+          <a class="btn " href="" target="_blank">
+          </a>
+        </form>
+        </div>
+        </div>
+        <div class="">
+              <div class="col-sm-8">
+        <div id="map" class="shiny-plot-output" style="width: 100% ; height: 1px; display: block;  margin-left: auto; margin-right: auto "></div>
+      </div>
+    </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div id="map" class="shiny-plot-output" style="width: 100%; height: 600px; "> </div>
+       </div>
+    <!-- /.container-fluid -->
+  </div>
+  </div>
+  </div>
+  <!-- /#page-wrapper -->
+<!-- /#wrapper -->
+<!-- jQuery -->
+<script src="plugins/bower_components/jquery/dist/jquery.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Menu Plugin JavaScript -->
+<script src="plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+
+<script src="js/jasny-bootstrap.js"></script>
+<!-- <script src="plugins/dist/js/standalone/selectize.js"></script> -->
+<script>
+            $(document).ready(function(){
+           });
+
+   
+            
+          
+        </script>
+<!--Style Switcher -->
+<!-- Chart JS -->
+<script src="js/custom.min.js"></script>
+<!--Morris JavaScript -->
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+</body>
+</html>
